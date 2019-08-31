@@ -1,0 +1,177 @@
+assg 1;-
+
+Q1. describe salespeople;
+
+Q2. select * from customers where RATING= 100;
+
+Q3. SELECT * from customers where city is NULL;
+
+Q4. select snum,onum,max(amt),odate as amount 	
+	from orders group by snum,odate;  //sname  not in same field 
+
+Q5. select * from orders ORDER BY cnum DESC;
+
+Q6.Find which salespeople currently have orders in 		
+	the Orders table.
+	--select snum,onum from orders 	
+	where odate= 19960610 ;
+
+Q7. List names of all customers matched with the 	salespeople serving them.
+	--select cname,sname from salespeople s
+	right outer join customers c ON 		
+	s.snum=c.snum;
+
+Q8. Find the names and numbers of all salespeople 	
+	who had more than one customer.
+	-- select sname,cname from salespeople 	s 	
+	INNER JOIN customer c
+	ON c.snum=s.snum
+	group by s.sname       
+	having count(s.snum) > 1;
++--------+---------+
+| sname  | cname   |
++--------+---------+
+| peel   | hoffman |
+| serres | liu     |
++--------+---------+
+2 rows in set (0.00 sec)
+
+
+
+
+Q9.
+mysql> select snum,count(snum) as OrderCount from orders group by snum order by OrderCount desc;
++------+------------+
+| snum | OrderCount |
++------+------------+
+| 1001 |          3 |
+| 1007 |          2 |
+| 1002 |          2 |
+| 1003 |          2 |
+| 1004 |          1 |
++------+------------+
+5 rows in set (0.00 sec)
+
+
+Q10.
+select * from customer group by(city) having count(city) >=2 and city='san jose';
++------+-------+----------+--------+------+
+| cnum | cname | city     | rating | snum |
++------+-------+----------+--------+------+
+| 2003 | liu   | san jose |    200 | 1002 |
++------+-------+----------+--------+------+
+1 row in set (0.00 sec)eix
+
+Q11.
+mysql> select s.sname,c.cname,c.city  from salespeople s inner join customer c  on s.city=c.city;
++--------+----------+----------+
+| sname  | cname    | city     |
++--------+----------+----------+
+| peel   | hoffman  | london   |
+| motika | hoffman  | london   |
+| fran   | hoffman  | london   |
+| serres | liu      | san jose |
+| peel   | clemens  | london   |
+| motika | clemens  | london   |
+| fran   | clemens  | london   |
+| serres | cisneros | san jose |
++--------+----------+----------+
+8 rows in set (0.00 sec)
+
+Q12.
+mysql> select s.sname,max(o.amt) as MaxOrder from orders o inner join salespeople s on o.snum= s.snum group by s.snum;
+	
++---------+----------+
+| sname   | MaxOrder |
++---------+----------+
+| peel    |  9891.88 |
+| serres  |  5160.45 |
+| axelrod |  1713.23 |
+| motika  |  1900.10 |
+| rifkin  |  1098.16 |
++---------+----------+
+5 rows in set (0.00 sec)
+
+Q13.
+mysql> select cname,rating  from customer where rating>=200;
++----------+--------+
+| cname    | rating |
++----------+--------+
+| giovanni |    200 |
+| liu      |    200 |
+| grass    |    300 |
+| cisneros |    300 |
++----------+--------+
+4 rows in set (0.00 sec)
+
+Q14.
+mysql> select sname,comm from salespeople where city='london';
++--------+------+
+| sname  | comm |
++--------+------+
+| peel   | 0.12 |
+| motika | 0.11 |
+| fran   | 0.26 |
++--------+------+
+3 rows in set (0.00 sec)
+
+Q15.
+mysql> select * from orders where snum=(select snum from salespeople where sname='motika');
++------+---------+------------+------+------+
+| onum | amt     | odate      | cnum | snum |
++------+---------+------------+------+------+
+| 3002 | 1900.10 | 1996-03-10 | 2007 | 1004 |
++------+---------+------------+------+------+
+1 row in set (0.00 sec)
+
+Q16.
+
+mysql> select c.cname from customer c inner join orders o on c.cnum=o.cnum where o.odate=19960310;
++----------+
+| cname    |
++----------+
+| cisneros |
+| hoffman  |
+| pereira  |
+| liu      |
+| cisneros |
++----------+
+5 rows in set (0.00 sec)
+
+Q17.
+
+mysql> select odate,sum(amt) from orders group by odate having sum(amt)>2000 ;
++------------+----------+
+| odate      | sum(amt) |
++------------+----------+
+| 1996-03-10 |  8944.59 |
+| 1996-05-10 |  4723.00 |
+| 1996-06-10 | 11201.83 |
++------------+----------+
+3 rows in set (0.00 sec)
+
+Q18.
+mysql> select amt, odate from orders where amt >any (select min(amt) from orders where odate=19960610) and odate!=19960610;
++---------+------------+
+| amt     | odate      |
++---------+------------+
+| 1900.10 | 1996-03-10 |
+| 5160.45 | 1996-03-10 |
+| 1713.23 | 1996-04-10 |
+| 4723.00 | 1996-05-10 |
++---------+------------+
+4 rows in set (0.00 sec)
+
+
+
+mysql> select amt, odate from orders where amt >all (select amt from orders where odate=19960410);
++---------+------------+
+| amt     | odate      |
++---------+------------+
+| 1900.10 | 1996-03-10 |
+| 5160.45 | 1996-03-10 |
+| 4723.00 | 1996-05-10 |
+| 9891.88 | 1996-06-10 |
++---------+------------+
+4 rows in set (0.00 sec)
+

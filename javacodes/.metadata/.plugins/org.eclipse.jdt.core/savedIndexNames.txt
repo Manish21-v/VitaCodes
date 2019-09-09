@@ -1,8 +1,0 @@
-INDEX VERSION 1.127+D:\manish\javacodes\.metadata\.plugins\org.eclipse.jdt.core
-3624535451.index
-673356996.index
-3048885576.index
-262142283.index
-3948411960.index
-3454860236.index
-2726546772.index

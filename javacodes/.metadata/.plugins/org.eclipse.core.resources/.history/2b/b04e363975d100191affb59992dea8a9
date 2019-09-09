@@ -1,0 +1,18 @@
+package COM.MANISH;
+
+public class Area {
+	
+	public Area() {
+	System.out.println("inside area constructor");
+		// TODO Auto-generated constructor stub
+	}
+
+	public int calArea(int a, int b)
+	{
+		int value= (a*b);
+		return value;
+	}
+}
+	
+
+

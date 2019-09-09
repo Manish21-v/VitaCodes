@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;DEV&apos;&#x0D;&#x0A;- Original project: &apos;DEV&apos;&#x0D;&#x0A;- Original element: &apos;COM.MANISH.Calperi.java&apos;" description="Delete element" element1="/src&lt;COM.MANISH{Calperi.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1567781761224" subPackages="false" version="1.0"/>
+</session>

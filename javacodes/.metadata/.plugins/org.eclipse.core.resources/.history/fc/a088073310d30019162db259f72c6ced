@@ -1,0 +1,29 @@
+package sortArray;
+
+public class Array {
+
+	public static void main(String[] args) {
+		int arr[]={2,5,6,7,1};
+		for(int cnt=0;cnt<arr.length-1;cnt++)
+		{
+			for(int cnt1=1;cnt1<arr.length;cnt1++)
+			{
+				if(arr[cnt]>arr[cnt1])
+				{
+					int temp=arr[cnt];
+					arr[cnt]=arr[cnt1];
+					arr[cnt1]=temp;
+				}
+				 
+			}
+			
+		}
+		for(int j=0;j<arr.length;j++)
+		{
+				System.out.println(arr[j]);
+			
+		}
+
+	}
+
+}

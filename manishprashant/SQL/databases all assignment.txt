@@ -175,3 +175,62 @@ mysql> select amt, odate from orders where amt >all (select amt from orders wher
 +---------+------------+
 4 rows in set (0.00 sec)
 
+20)
+mysql> select *from customers group by rating,cname;
++------+----------+----------+--------+------+
+| cnum | cname    | city     | rating | snum |
++------+----------+----------+--------+------+
+| 2006 | ciemens  | london   |    100 | 1001 |
+| 2001 | hoffman  | london   |    100 | 1001 |
+| 2007 | pereira  | rome     |    100 | 1004 |
+| 2002 | giovanni | rome     |    200 | 1003 |
+| 2003 | liu      | san jose |    200 | 1002 |
+| 2008 | cisneros | san jose |    300 | 1007 |
+| 2004 | grass    | berlin   |    300 | 1002 |
++------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+
+21)
+mysql> select cname,cnum from customers where cnum >((select snum from salespeople where sname='serres')+1000);
++----------+------+
+| cname    | cnum |
++----------+------+
+| liu      | 2003 |
+| grass    | 2004 |
+| ciemens  | 2006 |
+| pereira  | 2007 |
+| cisneros | 2008 |
++----------+------+
+5 rows in set (0.00 sec)
+
+24)
+mysql> select max(amt),onum,snum from orders where odate=19961003 group by snum;
++------------------+------+------+
+| max(amt)         | onum | snum |
++------------------+------+------+
+| 767.190002441406 | 3003 | 1001 |
+|  5160.4501953125 | 3005 | 1002 |
+| 1900.09997558594 | 3002 | 1004 |
+| 1098.16003417969 | 3001 | 1007 |
++------------------+------+------+
+4 rows in set (0.00 sec)
+
+29)
+mysql> select o.onum,o.amt,o.odate,s.sname from orders o inner join salespeople s on o.snum=s.snum where s.snum in (select s.snum from orders group by s.snum having count(s.snum)>1) order by s.snum;
++------+---------+------------+---------+
+| onum | amt     | odate      | sname   |
++------+---------+------------+---------+
+| 3008 |    4723 | 1996-10-05 | peel    |
+| 3003 |  767.19 | 1996-10-03 | peel    |
+| 3011 | 9891.88 | 1996-10-06 | peel    |
+| 3010 | 1309.95 | 1996-10-06 | serres  |
+| 3005 | 5160.45 | 1996-10-03 | serres  |
+| 3007 |   75.75 | 1996-10-04 | axelrod |
+| 3009 | 1713.23 | 1996-10-04 | axelrod |
+| 3002 |  1900.1 | 1996-10-03 | motika  |
+| 3006 | 1098.16 | 1996-10-03 | rifkin  |
+| 3001 |   18.69 | 1996-10-03 | rifkin  |
++------+---------+------------+---------+
+10 rows in set (0.00 sec)
+
+

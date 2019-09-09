@@ -1,0 +1,13 @@
+package client;
+
+import COM.MANISH.Area;
+
+public class demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Area a= new Area();
+		System.out.println(a.calArea(5,6));
+	}
+
+}

@@ -1,0 +1,17 @@
+package client;
+
+import COM.MANISH.Area;
+import COM.MANISH.perimeter;
+
+public class demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Area a= new Area();
+		System.out.println(a.calArea(6, 6));
+		perimeter c = new perimeter();
+		System.out.println(c.getperi(5, 6));
+		
+	}
+
+}

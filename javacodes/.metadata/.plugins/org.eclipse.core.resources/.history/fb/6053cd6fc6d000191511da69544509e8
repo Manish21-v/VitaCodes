@@ -1,0 +1,10 @@
+package packagemain;
+import com.manish.AccessType;
+public class UseAccessSpecifier {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AccessType a1= new AccessType();
+	}
+
+}

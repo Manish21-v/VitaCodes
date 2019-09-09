@@ -1,0 +1,13 @@
+package COM.MANISH;
+
+public class perimeter {
+	
+	
+		
+		public int getperi(int a,int b)
+		{
+			int value=2*(a+b);
+			return value;
+		}
+	
+}

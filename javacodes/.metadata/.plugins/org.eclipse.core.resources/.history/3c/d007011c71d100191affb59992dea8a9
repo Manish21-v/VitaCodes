@@ -1,0 +1,17 @@
+package COM.MANISH;
+
+public class perimeter {
+	
+	
+		perimeter()
+		{
+			
+			System.out.println("inside construter");
+		}
+		public int getperi(int a,int b)
+		{
+			int value=2*(a+b);
+			return value;
+		}
+	
+}

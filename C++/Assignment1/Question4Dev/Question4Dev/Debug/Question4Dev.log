@@ -1,0 +1,10 @@
+﻿Build started 25-09-2019 20:41:16.
+     1>Project "D:\manish\C++codes\Question4Dev\Question4Dev\Question4Dev.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\manish\C++codes\Question4Dev\Debug\Question4Dev.lib" /NOLOGO Debug\Source.obj
+         Question4Dev.vcxproj -> D:\manish\C++codes\Question4Dev\Debug\Question4Dev.lib
+     1>Done Building Project "D:\manish\C++codes\Question4Dev\Question4Dev\Question4Dev.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.14

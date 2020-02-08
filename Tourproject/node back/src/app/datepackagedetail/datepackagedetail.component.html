@@ -1,0 +1,59 @@
+<html>
+
+  <head>
+    <title>Date Package Details !!</title>
+    <style>
+      table, th, td {
+        border:1px white;
+      }
+      th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+    </style>
+    <title>Package complete details!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+  
+  <body>
+    <app-header></app-header>
+  
+ <table style="width:80%">
+    <div *ngIf='datefilterlist'>      
+      <tr>
+
+        <th bgcolor="#EFEFEF">DatePackageId </th>
+        <th bgcolor="#EFEFEF">Start Date</th>
+        <th bgcolor="#EFEFEF">End Date</th>
+        <th bgcolor="#EFEFEF">Pkg Id</th>
+        <th bgcolor="#EFEFEF">Rev Flag</th>
+        <th bgcolor="#EFEFEF">Select Your Date</th>
+      </tr>
+        
+      <tr *ngFor="let item of datefilterlist">
+        <td>{{item.datepackageid}}</td>
+       <!--- <td ng-click="Show()" (click)="getlist(cdetail.packagecompletedetail.packageid)">{{cdetail.startdate}}</td> -->       
+       <td>{{item.startdate | date}}</td>
+       <td>{{item.enddate |date}}</td>
+       <td>{{item.packagecompletedetail.packageid}}</td>
+       <td>{{item.reversetripflag}}</td>
+       <td><input type="radio" name="rvalue" (click)="getdatevalue(item.datepackageid)"></td>
+      </tr>
+
+      </div>
+  </table>
+<form>
+  <input type="button" (click)="checklogin()" value="checkout">
+</form>
+
+<app-footer></app-footer>
+  </body>
+  </html>
+
+

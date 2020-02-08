@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Customer details !!</title>
+</head>
+
+<body>
+  <form [formGroup]="cForm" #f=ngForm>
+    <h3>Please fill your details :</h3><hr>
+    <br>
+    Name :<input type="text" formControlName="cname" name="cname" placeholder="Enter your name" required>
+    <br><br>
+    Email :<input type="email" formControlName="cemail" name="cemail" placeholder="Enter your email" required>
+    <br><br>
+    Password :<input type="password" formControlName="cpass" name="cpass" placeholder="Enter a password" required>
+    <br><br>
+    Address :<input type="text" formControlName="cadd1" name="cadd1" placeholder="Enter address" required>&nbsp;&nbsp;&nbsp;<input type="text"
+    formControlName="cadd2"  name="cadd2" placeholder="Landmark">
+    <br><br>
+    City :<input type="text" formControlName="ccity" name="ccity" required placeholder="Enter your city">
+    <br><br>
+    State :<input type="text" formControlName="cstate" name="cstate" required placeholder="Enter state">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Pincode :<input type="text" formControlName="cpin" name="cpin" required placeholder="Enter pincode">
+    <br><br>
+    Tel no. :<input type="text" formControlName="ctel" name="ctel" required placeholder="Enter telephone">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Mobile :<input type="text" formControlName="cmob" name="cmob" required placeholder="Enter mobile">
+    <br><br>
+    <input class="btn btn-primary btn btn-primary" type="submit" (click)="onSubmit(cForm)" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input class="btn btn-primary btn btn-info" type="reset" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary btn btn-alert" (click)="update(f.form)">Update Customer</button>
+  </form>
+<hr>
+{{cForm.value|json}}
+</body>
+</html>

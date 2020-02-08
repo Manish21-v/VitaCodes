@@ -1,0 +1,42 @@
+
+<html>
+
+  <head>
+    <title>Price details !!</title>
+    <style>
+      table, th, td {
+        border:1px groove black;
+      }
+    </style>
+  </head>
+  
+  <body>
+  
+  <table>
+
+    <br><br><br>
+    <tbody *ngIf='pricedetail'>       
+      <tr>
+
+        <th bgcolor="#EFEFEF">PriceID </th>
+        <th bgcolor="#EFEFEF">PackageId</th>
+        <th bgcolor="#EFEFEF">Tourcost</th>
+        <th bgcolor="#EFEFEF">Singleperson</th>
+        <th bgcolor="#EFEFEF">Adults</th>
+        <th bgcolor="#EFEFEF">Childwobed</th>
+        <th bgcolor="#EFEFEF">Childwithbed</th>
+      </tr>
+        
+ <tr *ngFor="let pdetail of pricedetail">
+   <td>{{pdetail.priceid}}</td>
+   <td>{{pdetail.packagecompletedetail.packageid}}</td>
+  <td>{{pdetail.tourcost}}</td>
+  <td>{{pdetail.singleperson}}</td>
+  <td>{{pdetail.adults}}</td>
+  <td>{{pdetail.childwobed}}</td>
+  <td>{{pdetail.childwithbed}}</td>
+</tr>
+  </table>
+  
+  </body>
+  </html>

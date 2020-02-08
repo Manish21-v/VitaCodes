@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PackageCompleteDetailControllerService WSDL service -->
+
+  <service name="PackageCompleteDetailController" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://controller.etour"/>
+      <parameter name="wsdlServiceElement" value="PackageCompleteDetailControllerService"/>
+      <parameter name="schemaQualified" value="http://controller.etour,http://pojo.etour"/>
+      <parameter name="wsdlServicePort" value="PackageCompleteDetailController"/>
+      <parameter name="className" value="etour.controller.PackageCompleteDetailController"/>
+      <parameter name="wsdlPortType" value="PackageCompleteDetailController"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://controller.etour" xmlns:retNS="http://controller.etour" xmlns:rtns="http://pojo.etour" name="getPackage" qname="operNS:getPackage" returnQName="retNS:getPackageReturn" returnType="rtns:Packagecompletedetail" soapAction="">
+        <parameter xmlns:pns="http://controller.etour" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.etour" name="addPackage" qname="operNS:addPackage" soapAction="">
+        <parameter xmlns:pns="http://controller.etour" xmlns:tns="http://pojo.etour" qname="pns:packagedetail" type="tns:Packagecompletedetail"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.etour" name="updatePackage" qname="operNS:updatePackage" soapAction="">
+        <parameter xmlns:pns="http://controller.etour" xmlns:tns="http://pojo.etour" qname="pns:packagedetail" type="tns:Packagecompletedetail"/>
+        <parameter xmlns:pns="http://controller.etour" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.etour" name="deletePackage" qname="operNS:deletePackage" soapAction="">
+        <parameter xmlns:pns="http://controller.etour" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://controller.etour" xmlns:retNS="http://controller.etour" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="showPackage" qname="operNS:showPackage" returnQName="retNS:showPackageReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="showPackage getPackage addPackage updatePackage deletePackage"/>
+
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;deletePackage" type="java:etour.controller.DeletePackage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;getPackage" type="java:etour.controller.GetPackage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;updatePackageResponse" type="java:etour.controller.UpdatePackageResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://pojo.etour" qname="ns:Packagecompletedetail" type="java:etour.pojo.Packagecompletedetail" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;getPackageResponse" type="java:etour.controller.GetPackageResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://controller.etour" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;updatePackage" type="java:etour.controller.UpdatePackage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;addPackageResponse" type="java:etour.controller.AddPackageResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;showPackageResponse" type="java:etour.controller.ShowPackageResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;deletePackageResponse" type="java:etour.controller.DeletePackageResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://pojo.etour" qname="ns:Categorysubcategory" type="java:etour.pojo.Categorysubcategory" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;addPackage" type="java:etour.controller.AddPackage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://controller.etour" qname="ns:&gt;showPackage" type="java:etour.controller.ShowPackage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

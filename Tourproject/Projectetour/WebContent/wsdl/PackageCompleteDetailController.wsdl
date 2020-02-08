@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controller.etour" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controller.etour" xmlns:intf="http://controller.etour" xmlns:tns1="http://pojo.etour" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controller.etour" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://pojo.etour"/>
+   <element name="getPackage">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPackageResponse">
+    <complexType>
+     <sequence>
+      <element name="getPackageReturn" type="tns1:Packagecompletedetail"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="addPackage">
+    <complexType>
+     <sequence>
+      <element name="packagedetail" type="tns1:Packagecompletedetail"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addPackageResponse">
+    <complexType/>
+   </element>
+   <element name="updatePackage">
+    <complexType>
+     <sequence>
+      <element name="packagedetail" type="tns1:Packagecompletedetail"/>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updatePackageResponse">
+    <complexType/>
+   </element>
+   <element name="deletePackage">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deletePackageResponse">
+    <complexType/>
+   </element>
+   <element name="showPackage">
+    <complexType/>
+   </element>
+   <element name="showPackageResponse">
+    <complexType>
+     <sequence>
+      <element name="showPackageReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://pojo.etour" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://controller.etour"/>
+   <complexType name="Categorysubcategory">
+    <sequence>
+     <element name="categoryid" nillable="true" type="xsd:int"/>
+     <element name="categoryimage" nillable="true" type="xsd:string"/>
+     <element name="categoryname" nillable="true" type="xsd:string"/>
+     <element name="catsubid" nillable="true" type="xsd:int"/>
+     <element name="eofflag" nillable="true" type="xsd:string"/>
+     <element name="packagecompletedetails" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="subcategoryid" nillable="true" type="xsd:int"/>
+     <element name="subcategoryimage" nillable="true" type="xsd:string"/>
+     <element name="subcategoryname" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Packagecompletedetail">
+    <sequence>
+     <element name="bookingdetails" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="categorysubcategory" nillable="true" type="tns1:Categorysubcategory"/>
+     <element name="datepackagedetails" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="itineraries" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="packageid" nillable="true" type="xsd:int"/>
+     <element name="pricedetails" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="tourimage" nillable="true" type="xsd:string"/>
+     <element name="tourname" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPackageResponse">
+
+      <wsdl:part element="impl:getPackageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePackageRequest">
+
+      <wsdl:part element="impl:updatePackage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPackageRequest">
+
+      <wsdl:part element="impl:addPackage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPackageResponse">
+
+      <wsdl:part element="impl:addPackageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPackageRequest">
+
+      <wsdl:part element="impl:getPackage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePackageRequest">
+
+      <wsdl:part element="impl:deletePackage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showPackageRequest">
+
+      <wsdl:part element="impl:showPackage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showPackageResponse">
+
+      <wsdl:part element="impl:showPackageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePackageResponse">
+
+      <wsdl:part element="impl:updatePackageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePackageResponse">
+
+      <wsdl:part element="impl:deletePackageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PackageCompleteDetailController">
+
+      <wsdl:operation name="getPackage">
+
+         <wsdl:input message="impl:getPackageRequest" name="getPackageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPackageResponse" name="getPackageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addPackage">
+
+         <wsdl:input message="impl:addPackageRequest" name="addPackageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addPackageResponse" name="addPackageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePackage">
+
+         <wsdl:input message="impl:updatePackageRequest" name="updatePackageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updatePackageResponse" name="updatePackageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletePackage">
+
+         <wsdl:input message="impl:deletePackageRequest" name="deletePackageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deletePackageResponse" name="deletePackageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showPackage">
+
+         <wsdl:input message="impl:showPackageRequest" name="showPackageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:showPackageResponse" name="showPackageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PackageCompleteDetailControllerSoapBinding" type="impl:PackageCompleteDetailController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getPackage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPackageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPackageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addPackage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addPackageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addPackageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePackage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updatePackageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updatePackageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletePackage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deletePackageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deletePackageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showPackage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="showPackageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="showPackageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PackageCompleteDetailControllerService">
+
+      <wsdl:port binding="impl:PackageCompleteDetailControllerSoapBinding" name="PackageCompleteDetailController">
+
+         <wsdlsoap:address location="http://localhost:8080/Projectetour/services/PackageCompleteDetailController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

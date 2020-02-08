@@ -1,0 +1,59 @@
+
+<html>
+
+  <head>
+    <title>Package complete details!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+    <app-header></app-header>
+    <table>
+      <tr >
+        <td *ngFor="let cdetail of packagedetail">
+        <div class="bs-example">      
+        <div class="container">    
+          <div class="row" id="mydiv">
+            <div class="col-sm-4">
+              <div class="panel panel-primary">
+                  <div class="panel-heading"><a id="a1" (click)="getpackageid(cdetail.packageid)"   >{{cdetail.tourname}}</a></div>
+                  <div class="panel-body"><img src="{{cdetail.tourimage}}" class="img-responsive" style="width:100%" alt="Image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </td>
+    </tr>
+  
+</table>
+  
+  <!-- <table>
+    <tbody *ngIf='packagecompletedetail'>       
+      <tr>
+
+      
+        <th bgcolor="#EFEFEF">PackageId</th>
+        <th bgcolor="#EFEFEF">Tourname</th>
+        <th bgcolor="#EFEFEF">Tourimage</th>
+        <th bgcolor="#EFEFEF">Catsubid</th>
+        <th bgcolor="#EFEFEF">Description</th>
+    
+      </tr>
+        
+ <tr *ngFor="let packdetail of packagecompletedetail">
+   <td>{{packdetail.packageid}}</td>
+  <td>{{packdetail.tourname}}</td>
+  <td>{{packdetail.tourimage}}</td>
+  <td>{{packdetail.catsubid}}</td>
+  <td>{{packdetail.description}}</td>
+  
+</tr>
+  </table> -->
+  <app-footer></app-footer>
+  </body>
+  </html>

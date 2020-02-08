@@ -1,0 +1,119 @@
+<html>
+
+  <head>
+    <title>Itinerary Details !!</title> <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <style>
+      container {
+  position: relative;
+  text-align: center;
+  color: blanchedalmond;
+}
+    .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+      table, th, td {
+        border:1px groove black;
+        
+      }
+      #a1
+  {
+      font-size: large;
+      color: whitesmoke;
+  
+  }
+  
+  #mydiv
+  {
+      max-width:60%;
+      max-height:60%;
+  }
+  
+  td
+  {
+      max-width: 300px;
+  }
+  .navbar {
+      margin-bottom: 500px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  
+  
+    .bs-example{
+        margin: 50px;
+    }
+    </style>
+  </head>
+  
+  <body>
+    <app-header></app-header>
+    <table>
+      <tbody *ngIf='itinerary' class="container"> 
+        <tr *ngFor="let cdetail of itr">
+<div class="container">
+  
+    <ul class="timeline">
+      <li>
+        <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">DAY NO : {{cdetail.dayno}}</h4>
+          </div>
+        </div>
+      </li>
+       
+       <li>
+          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">LOCATION : {{cdetail.location}}</h4>
+          </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Description</h4>
+            </div>
+            <div class="timeline-body">
+              <p>{{cdetail.daywisedescription}}</p>
+              <hr>
+             
+            </div>
+          </div>
+
+          
+        </li>
+
+      </ul>
+    
+</div>
+
+</tr>
+<button class="btn btn-primary btn btn-primary" (click)="getpackageid(itr.packageid)">Select Date</button> 
+</table>
+<app-footer></app-footer>
+  </body>
+  </html>

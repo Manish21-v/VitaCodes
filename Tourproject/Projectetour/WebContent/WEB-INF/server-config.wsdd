@@ -1,0 +1,110 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\dac\Desktop\sss\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Projectetour\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="Customerdetail" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="getState" qname="ns1:getState" returnQName="ns1:getStateReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns1:operation name="setState" qname="ns2:setState" soapAction="" xmlns:ns2="http://mypack">
+   <ns1:parameter qname="ns2:state" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getPassword" qname="ns3:getPassword" returnQName="ns3:getPasswordReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPassword" qname="ns4:setPassword" soapAction="" xmlns:ns4="http://mypack">
+   <ns1:parameter qname="ns4:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getEmail" qname="ns5:getEmail" returnQName="ns5:getEmailReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setEmail" qname="ns6:setEmail" soapAction="" xmlns:ns6="http://mypack">
+   <ns1:parameter qname="ns6:email" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getRegistrationdate" qname="ns7:getRegistrationdate" returnQName="ns7:getRegistrationdateReturn" returnType="xsd:dateTime" soapAction="" xmlns:ns7="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setRegistrationdate" qname="ns8:setRegistrationdate" soapAction="" xmlns:ns8="http://mypack">
+   <ns1:parameter qname="ns8:registrationdate" type="xsd:dateTime" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setCity" qname="ns9:setCity" soapAction="" xmlns:ns9="http://mypack">
+   <ns1:parameter qname="ns9:city" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getCity" qname="ns10:getCity" returnQName="ns10:getCityReturn" returnType="xsd:string" soapAction="" xmlns:ns10="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPin" qname="ns11:setPin" soapAction="" xmlns:ns11="http://mypack">
+   <ns1:parameter qname="ns11:pin" type="xsd:short" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getPin" qname="ns12:getPin" returnQName="ns12:getPinReturn" returnType="xsd:short" soapAction="" xmlns:ns12="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getTelno" qname="ns13:getTelno" returnQName="ns13:getTelnoReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setTelno" qname="ns14:setTelno" soapAction="" xmlns:ns14="http://mypack">
+   <ns1:parameter qname="ns14:telno" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getMobileno" qname="ns15:getMobileno" returnQName="ns15:getMobilenoReturn" returnType="xsd:string" soapAction="" xmlns:ns15="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setAddress2" qname="ns16:setAddress2" soapAction="" xmlns:ns16="http://mypack">
+   <ns1:parameter qname="ns16:address2" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getAddress2" qname="ns17:getAddress2" returnQName="ns17:getAddress2Return" returnType="xsd:string" soapAction="" xmlns:ns17="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setAddress1" qname="ns18:setAddress1" soapAction="" xmlns:ns18="http://mypack">
+   <ns1:parameter qname="ns18:address1" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setMobileno" qname="ns19:setMobileno" soapAction="" xmlns:ns19="http://mypack">
+   <ns1:parameter qname="ns19:mobileno" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getCustomerid" qname="ns20:getCustomerid" returnQName="ns20:getCustomeridReturn" returnType="xsd:int" soapAction="" xmlns:ns20="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getAddress1" qname="ns21:getAddress1" returnQName="ns21:getAddress1Return" returnType="xsd:string" soapAction="" xmlns:ns21="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setCustomername" qname="ns22:setCustomername" soapAction="" xmlns:ns22="http://mypack">
+   <ns1:parameter qname="ns22:customername" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getCustomername" qname="ns23:getCustomername" returnQName="ns23:getCustomernameReturn" returnType="xsd:string" soapAction="" xmlns:ns23="http://mypack" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setCustomerid" qname="ns24:setCustomerid" soapAction="" xmlns:ns24="http://mypack">
+   <ns1:parameter qname="ns24:customerid" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="setPassword getAddress2 setCity getAddress1 setTelno getTelno setRegistrationdate setAddress2 getCustomerid setPin setAddress1 getPassword getState setEmail getPin getCustomername setState getEmail getMobileno setCustomername getRegistrationdate setCustomerid setMobileno getCity"/>
+  <ns1:parameter name="wsdlPortType" value="Customerdetail"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://mypack"/>
+  <ns1:parameter name="wsdlServicePort" value="Customerdetail"/>
+  <ns1:parameter name="className" value="mypack.Customerdetail"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://mypack"/>
+  <ns1:parameter name="wsdlServiceElement" value="CustomerdetailService"/>
+ </ns1:service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

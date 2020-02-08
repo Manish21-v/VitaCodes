@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CustomerdetailService WSDL service -->
+
+  <service name="Customerdetail" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://mypack"/>
+      <parameter name="wsdlServiceElement" value="CustomerdetailService"/>
+      <parameter name="schemaQualified" value="http://mypack"/>
+      <parameter name="wsdlServicePort" value="Customerdetail"/>
+      <parameter name="className" value="mypack.Customerdetail"/>
+      <parameter name="wsdlPortType" value="Customerdetail"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getState" qname="operNS:getState" returnQName="retNS:getStateReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setState" qname="operNS:setState" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:state" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPassword" qname="operNS:getPassword" returnQName="retNS:getPasswordReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setPassword" qname="operNS:setPassword" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEmail" qname="operNS:getEmail" returnQName="retNS:getEmailReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setEmail" qname="operNS:setEmail" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:email" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getRegistrationdate" qname="operNS:getRegistrationdate" returnQName="retNS:getRegistrationdateReturn" returnType="rtns:dateTime" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setRegistrationdate" qname="operNS:setRegistrationdate" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:registrationdate" type="tns:dateTime"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setCity" qname="operNS:setCity" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:city" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCity" qname="operNS:getCity" returnQName="retNS:getCityReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setPin" qname="operNS:setPin" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pin" type="tns:short"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPin" qname="operNS:getPin" returnQName="retNS:getPinReturn" returnType="rtns:short" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getTelno" qname="operNS:getTelno" returnQName="retNS:getTelnoReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setTelno" qname="operNS:setTelno" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:telno" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMobileno" qname="operNS:getMobileno" returnQName="retNS:getMobilenoReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setAddress2" qname="operNS:setAddress2" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:address2" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAddress2" qname="operNS:getAddress2" returnQName="retNS:getAddress2Return" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setAddress1" qname="operNS:setAddress1" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:address1" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setMobileno" qname="operNS:setMobileno" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mobileno" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCustomerid" qname="operNS:getCustomerid" returnQName="retNS:getCustomeridReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAddress1" qname="operNS:getAddress1" returnQName="retNS:getAddress1Return" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setCustomername" qname="operNS:setCustomername" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customername" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mypack" xmlns:retNS="http://mypack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCustomername" qname="operNS:getCustomername" returnQName="retNS:getCustomernameReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://mypack" name="setCustomerid" qname="operNS:setCustomerid" soapAction="">
+        <parameter xmlns:pns="http://mypack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:customerid" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="setPassword getAddress2 setCity getAddress1 setTelno getTelno setRegistrationdate setAddress2 getCustomerid setPin setAddress1 getPassword getState setEmail getPin getCustomername setState getEmail getMobileno setCustomername getRegistrationdate setCustomerid setMobileno getCity"/>
+
+  </service>
+</deployment>

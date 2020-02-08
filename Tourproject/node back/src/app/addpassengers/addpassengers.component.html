@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Passenger details !!</title>
+</head>
+
+<body>
+  <h3>Fill passenger details :</h3>
+  <hr>
+  <form [formGroup]="pForm" #f=ngForm>
+    Name : <input type="text" formControlName="pname" name="pname" placeholder="Enter your name" required><br>
+    <br>Date of birth :<input type="date" formControlName="pdob" name="pdob" required>
+    <br><br>
+    Room type :<select formControlName="proom" name="proom" required>
+      <option value="twinsharing">Twin-Sharing</option>
+      <option value="singleperson">Single Person</option>
+      <option value="adults">Extra Bed</option>
+      <option value="childwobed">Child With Bed</option>
+      <option value="childwithbed">Child without Bed</option>
+      </select>
+      <br><br>
+      Identity document :<select formControlName="pidentity" name="pidentity" required>
+        <option>~~Select identity proof~~</option>
+        <option value="Passport">Passport</option>
+        <option value="Driving Licence">Driving Licence</option>
+        <option value="Aadhar card">Aadhar card</option>
+        <option value="PAN card">PAN card</option>
+        </select><br><br>
+        Document id :<input type="number" formControlName="pdoc_id" name="pdoc_id" placeholder="Enter document id" required>
+        <br><br>
+        Passenger sex :<select formControlName="psex" name="psex" required>
+          <option>~~Select sex~~</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          </select>&nbsp;&nbsp;&nbsp;&nbsp;
+          <br><br>Disablity (if any): <input type="text" formControlName="pdis" name="pdis" placeholder="ignore if N.A.">
+        <br><br>Email :<input type="email" formControlName="pemail" name="pemail" placeholder="Enter email" required>
+
+        <br><br>
+        <input type="submit" class="btn btn-primary btn btn-primary" (click)="onSubmit(pForm)" value="Submit">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" class="btn btn-primary btn btn-info" value="Reset">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" (click)="booknow()" class="btn btn-primary btn btn-info" value="Book">
+  </form>
+  <hr>
+</body>
+</html>
